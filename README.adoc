@@ -1,0 +1,10 @@
+= My first C++ library
+
+Aim of this project is the test-driven development of a C++ library which can be used on iOS and Android.
+
+== Sources
+
+* https://atomheartother.github.io/c++/2018/07/12/CPPDynLib.html[Writing a Cross-Platform Dynamic Library] by Thomas Navennec
+* https://www.teddy.ch/c++_library_in_c/[Tutorial: HowTo integrate a C++ library/class into a C program] by Teddy Engineering GmbH
+
+
