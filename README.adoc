@@ -2,9 +2,39 @@
 
 Aim of this project is the test-driven development of a C++ library which can be used on iOS and Android.
 
+== Build system
+
+=== CMake
+==== Generation
+Regarding to the documentation you should create the Makefiles using the following command:
+
+    cmake -S. \
+          -B_builds \
+          -GXcode \
+          -DCMAKE_SYSTEM_NAME=iOS \
+          "-DCMAKE_OSX_ARCHITECTURES=armv7;armv7s;arm64;i386;x86_64" \
+          -DCMAKE_OSX_DEPLOYMENT_TARGET=10.0 \
+          -DCMAKE_INSTALL_PREFIX=`pwd`/_install \
+          -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO \
+          -DCMAKE_IOS_INSTALL_COMBINED=YES
+
+Problem with this: The test require a code signing identity and will run on a real device!
+
+==== Install
+
+    cmake --build _builds --config Debug --target install
+
+
+==== Check Library
+
+    lipo -info _install/lib/libfirstCppLib.a
+
+    otool -l _install/lib/libfirstCppLib.a | grep -A2 LC_VERSION_MIN_IPHONEOS
+
 == Sources
 
 * https://atomheartother.github.io/c++/2018/07/12/CPPDynLib.html[Writing a Cross-Platform Dynamic Library] by Thomas Navennec
 * https://www.teddy.ch/c++_library_in_c/[Tutorial: HowTo integrate a C++ library/class into a C program] by Teddy Engineering GmbH
+* https://cmake.org/cmake/help/v3.15/manual/cmake-toolchains.7.html#cross-compiling-for-ios-tvos-or-watchos[CMake - Cross Compiling for iOS, tvOS, or watchOS]
 
 
