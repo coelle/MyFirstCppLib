@@ -6,7 +6,7 @@
 BOOST_AUTO_TEST_SUITE(einfacher_stringtest)
 
     BOOST_AUTO_TEST_CASE(addition) {
-        Summierer sut;
+        nco::Summierer sut;
         std::string result = sut.addition(2, 3);
         BOOST_CHECK(result == "Das ergibt 5");
     }

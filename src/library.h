@@ -4,9 +4,10 @@
 #include <string>
 #include <iostream>
 
-class Summierer {
-public:
-    std::string addition(int a, int b);
-};
-
+namespace nco {
+    class Summierer {
+    public:
+        std::string addition(int a, int b);
+    };
+}
 #endif //FIRSTCPPLIB_LIBRARY_H
