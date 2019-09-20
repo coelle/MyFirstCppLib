@@ -1,4 +1,8 @@
 testBin/
+_builds/
+!_builds/target_directory
+_install/
+!_install/target_directory
 
 # Created by .ignore support plugin (hsz.mobi)
 ### C++ template
